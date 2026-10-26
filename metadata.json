@@ -1,0 +1,7 @@
+{
+  "name": "AH NYI - Social Network",
+  "description": "AH NYI is a modern, luxury-styled Myanmar social network featuring persistent photo/video feeds, built-in camera & video recording, real-time messaging, bilingual support, and owner administration.",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

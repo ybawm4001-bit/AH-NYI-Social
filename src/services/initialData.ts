@@ -1,0 +1,268 @@
+import { User, Post, NotificationItem, ChatMessage, SystemSettings } from '../types';
+
+export const OWNER_EMAIL = 'garag9190@gmail.com';
+
+export const initialUsers: User[] = [
+  {
+    id: 'user_owner_001',
+    name: 'AH NYI Founder',
+    handle: 'ahnyi_owner',
+    email: OWNER_EMAIL,
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    bio: 'AH NYI ပလက်ဖောင်း၏ မူလပိုင်ရှင် (Founder & Platform Owner). မြန်မာ့လူမှုကွန်ရက်ကို ကမ္ဘာ့အဆင့်မီ တည်ဆောက်လျက်ရှိသည်။',
+    role: 'owner',
+    isVerified: true,
+    followersCount: 12540,
+    followingCount: 142,
+    postsCount: 18,
+    createdAt: '2026-01-01T00:00:00.000Z',
+    status: 'active',
+    location: 'Yangon, Myanmar',
+    website: 'https://ahnyi.mm',
+    balanceMmk: 1850000
+  },
+  {
+    id: 'user_creator_002',
+    name: 'Thiri May (သီရိမေ)',
+    handle: 'thiri_may_travel',
+    email: 'thiri@example.com',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+    bio: 'Traveler & Photographer | မြန်မာပြည်အနှံ့ ခရီးသွားမှတ်တမ်းများနှင့် အလှအပများ 🇲🇲 ✨',
+    role: 'creator',
+    isVerified: true,
+    followersCount: 8430,
+    followingCount: 230,
+    postsCount: 34,
+    createdAt: '2026-01-15T00:00:00.000Z',
+    status: 'active',
+    location: 'Mandalay, Myanmar',
+    balanceMmk: 450000
+  },
+  {
+    id: 'user_creator_003',
+    name: 'Aung Thu (အောင်သူ)',
+    handle: 'aungthu_tech',
+    email: 'aungthu@example.com',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
+    bio: 'AI & Mobile App Developer | နည်းပညာနှင့် စွန့်ဦးတီထွင်မှုအကြောင်း ဆွေးနွေးကြမယ် 💻 🚀',
+    role: 'creator',
+    isVerified: true,
+    followersCount: 5210,
+    followingCount: 115,
+    postsCount: 21,
+    createdAt: '2026-02-01T00:00:00.000Z',
+    status: 'active',
+    location: 'Yangon, Myanmar',
+    balanceMmk: 320000
+  },
+  {
+    id: 'user_creator_004',
+    name: 'Hnin Nu (နှင်းနု)',
+    handle: 'hninnu_acoustic',
+    email: 'hninnu@example.com',
+    avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+    bio: 'Acoustic Guitar & Vocals 🎸 သီချင်းအေးအေးလေးတွေ နားဆင်ဖို့ ဖိတ်ခေါ်ပါတယ် 🎵',
+    role: 'creator',
+    isVerified: false,
+    followersCount: 3100,
+    followingCount: 88,
+    postsCount: 15,
+    createdAt: '2026-02-10T00:00:00.000Z',
+    status: 'active',
+    location: 'Taunggyi, Shan State',
+    balanceMmk: 180000
+  }
+];
+
+export const initialPosts: Post[] = [
+  {
+    id: 'post_001',
+    authorId: 'user_owner_001',
+    authorName: 'AH NYI Founder',
+    authorHandle: 'ahnyi_owner',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    authorVerified: true,
+    authorRole: 'owner',
+    type: 'video',
+    // High-quality vertical video (nature / cinematic)
+    mediaUrl: 'https://assets.mixkit.co/videos/preview/mixkit-tree-branches-in-the-breeze-1188-large.mp4',
+    mediaThumbnail: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    mediaDuration: 18,
+    caption: 'မင်္ဂလာပါ! AH NYI လူမှုကွန်ရက် ပလက်ဖောင်းမှ ကြိုဆိုပါတယ်။ ကျွန်ုပ်တို့၏ ကိုယ်ပိုင် မြန်မာ့ Social Network အသစ်တွင် ဗီဒီယိုများ၊ ဓာတ်ပုံများနှင့် အသံဖမ်းယူမှုများကို စိတ်ချမ်းသာစွာ တင်နိုင်ပါပြီ။ ရွှေရောင်နှင့် အဖြူရောင်စတိုင် အမိုက်စား ဒီဇိုင်းဖြင့် တင်ဆက်ထားပါသည်။ ✨🇲🇲',
+    hashtags: ['#AhNyi', '#MyanmarSocial', '#GoldEdition', '#Founder'],
+    likes: ['user_creator_002', 'user_creator_003'],
+    likesCount: 1420,
+    commentsCount: 68,
+    sharesCount: 135,
+    viewsCount: 6820,
+    isSponsored: false,
+    createdAt: '2026-10-21T18:30:00.000Z',
+    privacy: 'public'
+  },
+  {
+    id: 'post_002',
+    authorId: 'user_creator_002',
+    authorName: 'Thiri May (သီရိမေ)',
+    authorHandle: 'thiri_may_travel',
+    authorAvatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+    authorVerified: true,
+    authorRole: 'creator',
+    type: 'video',
+    mediaUrl: 'https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-sunset-26070-large.mp4',
+    mediaThumbnail: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+    mediaDuration: 15,
+    caption: 'ပုဂံမြေရဲ့ မနက်ခင်း နေထွက်ချိန် မိုးပျံပူဖောင်းတွေနဲ့ အလှတရားက ဘယ်တော့မှ မရိုးနိုင်ဘူး။ ဒီဗီဒီယိုလေးကို AH NYI ကင်မရာ စနစ်နဲ့ တိုက်ရိုက် ရိုက်ကူးတင်လိုက်တာပါ။ အားလုံး သဘောကျမယ်လို့ မျှော်လင့်ပါတယ် 🎈🌅',
+    hashtags: ['#Bagan', '#MyanmarTravel', '#Sunrise', '#AhNyiCreators'],
+    likes: ['user_owner_001', 'user_creator_003'],
+    likesCount: 940,
+    commentsCount: 42,
+    sharesCount: 78,
+    viewsCount: 4310,
+    isSponsored: true,
+    sponsorName: 'KBZPay Premier Partner',
+    createdAt: '2026-10-21T21:15:00.000Z',
+    privacy: 'public'
+  },
+  {
+    id: 'post_003',
+    authorId: 'user_creator_003',
+    authorName: 'Aung Thu (အောင်သူ)',
+    authorHandle: 'aungthu_tech',
+    authorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    authorVerified: true,
+    authorRole: 'creator',
+    type: 'photo',
+    mediaUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80',
+    caption: 'ကိုယ်ပိုင် App တစ်ခု တည်ဆောက်တဲ့အခါ UI/UX ကော Data Persistence ကော အရေးကြီးတယ်။ AH NYI ရဲ့ Offline-First စနစ်နဲ့ Database အချိတ်အဆက်က တကယ် စိတ်ချရတယ်။ သင်တို့ရော ဘယ်လို အမြင်ရှိလဲ? 👨‍💻💡',
+    hashtags: ['#TechMyanmar', '#MobileDev', '#CodingLife'],
+    likes: ['user_owner_001'],
+    likesCount: 520,
+    commentsCount: 19,
+    sharesCount: 31,
+    viewsCount: 2840,
+    isSponsored: false,
+    createdAt: '2026-10-21T22:00:00.000Z',
+    privacy: 'public'
+  },
+  {
+    id: 'post_004',
+    authorId: 'user_owner_001',
+    authorName: 'AH NYI Founder',
+    authorHandle: 'ahnyi_owner',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    authorVerified: true,
+    authorRole: 'owner',
+    type: 'photo',
+    mediaUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80',
+    caption: 'ရွှေတိဂုံစေတီတော်မြတ်ကြီး၏ ညနေဆည်းဆာ အလှ။ မြန်မာတို့၏ ဂုဏ်ယူဖွယ် ယဉ်ကျေးမှုနှင့် ရွှေရောင်တောက်ပသော ငြိမ်းချမ်းခြင်း အငွေ့အသက်။ အားလုံး ကိုယ်စိတ်နှစ်ဖြာ ကျန်းမာချမ်းသာကြပါစေ 🙏 ✨',
+    hashtags: ['#Shwedagon', '#Yangon', '#Peace', '#GoldenMyanmar'],
+    likes: ['user_creator_002', 'user_creator_004'],
+    likesCount: 1890,
+    commentsCount: 95,
+    sharesCount: 210,
+    viewsCount: 8900,
+    isSponsored: false,
+    createdAt: '2026-10-21T23:30:00.000Z',
+    privacy: 'public'
+  },
+  {
+    id: 'post_005',
+    authorId: 'user_creator_004',
+    authorName: 'Hnin Nu (နှင်းနု)',
+    authorHandle: 'hninnu_acoustic',
+    authorAvatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+    authorVerified: false,
+    authorRole: 'creator',
+    type: 'video',
+    mediaUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-holding-and-playing-an-acoustic-guitar-42589-large.mp4',
+    mediaThumbnail: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    mediaDuration: 12,
+    caption: 'သံစဉ်အေးအေးလေး တစ်ပုဒ်နဲ့ ညနေခင်းကို ဖြတ်သန်းကြရအောင်။ AH NYI မှာ တေးသံရှင်တွေနဲ့ Creator တွေအတွက် Reward စနစ်ပါ ပါဝင်လို့ တကယ် အားတက်စရာပါပဲ 🎸 🎶',
+    hashtags: ['#AcousticVibes', '#MyanmarMusic', '#GuitarCover'],
+    likes: ['user_creator_003'],
+    likesCount: 310,
+    commentsCount: 14,
+    sharesCount: 12,
+    viewsCount: 1420,
+    isSponsored: false,
+    createdAt: '2026-10-22T00:10:00.000Z',
+    privacy: 'public'
+  }
+];
+
+export const initialNotifications: NotificationItem[] = [
+  {
+    id: 'notif_001',
+    recipientId: 'user_owner_001',
+    senderId: 'user_creator_002',
+    senderName: 'Thiri May (သီရိမေ)',
+    senderAvatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+    type: 'like',
+    messageMy: 'သင်၏ "AH NYI မိတ်ဆက်" Post ကို သဘောကျကြောင်း ဖော်ပြခဲ့သည်။',
+    messageEn: 'liked your post "Welcome to AH NYI".',
+    targetId: 'post_001',
+    isRead: false,
+    createdAt: '2026-10-21T20:00:00.000Z'
+  },
+  {
+    id: 'notif_002',
+    recipientId: 'user_owner_001',
+    senderId: 'user_creator_003',
+    senderName: 'Aung Thu (အောင်သူ)',
+    senderAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    type: 'comment',
+    messageMy: 'သင်၏ Post တွင် မှတ်ချက်တစ်ခု ရေးသားခဲ့သည်: "ဒီဇိုင်း သိပ်လန်းပါတယ်ဗျာ!"',
+    messageEn: 'commented on your post: "Amazing design and smooth UX!"',
+    targetId: 'post_001',
+    isRead: false,
+    createdAt: '2026-10-21T21:45:00.000Z'
+  },
+  {
+    id: 'notif_003',
+    recipientId: 'user_owner_001',
+    senderId: 'system',
+    senderName: 'AH NYI Security',
+    senderAvatar: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="48" fill="%230F1319" stroke="%23D4AF37" stroke-width="4"/%3E%3Cpath d="M50 20 L75 32 V52 C75 68 64 80 50 85 C36 80 25 68 25 52 V32 Z" fill="%23D4AF37" opacity="0.3" stroke="%23D4AF37" stroke-width="3"/%3E%3C/svg%3E',
+    type: 'system',
+    messageMy: 'သင်၏ Owner အကောင့်အား အောင်မြင်စွာ အတည်ပြုထားပြီး Platform လုံခြုံရေး အဆင့်မြင့်တင်ထားပါသည်။',
+    messageEn: 'Your Owner account has been fully verified with supreme administrative privileges.',
+    isRead: true,
+    createdAt: '2026-10-21T18:00:00.000Z'
+  }
+];
+
+export const initialMessages: ChatMessage[] = [
+  {
+    id: 'msg_001',
+    conversationId: 'user_owner_001_user_creator_002',
+    senderId: 'user_creator_002',
+    recipientId: 'user_owner_001',
+    text: 'မင်္ဂလာပါ Founder ရှင်! AH NYI မှာ ဗီဒီယိုတင်ရတာ အရမ်း မြန်ပြီး ကြည်လင်တယ်နော်။',
+    createdAt: '2026-10-21T21:20:00.000Z',
+    isRead: true
+  },
+  {
+    id: 'msg_002',
+    conversationId: 'user_owner_001_user_creator_002',
+    senderId: 'user_owner_001',
+    recipientId: 'user_creator_002',
+    text: 'ကျေးဇူးတင်ပါတယ် သီရိမေ! Creator တွေအတွက် ဗီဒီယိုမပျောက်အောင်နဲ့ အသံထွက်ကြည်လင်အောင် အထူးဂရုပြု တည်ဆောက်ထားပါတယ်။ အကြံပြုချက်ရှိရင် ပြောပါနော်။',
+    createdAt: '2026-10-21T21:25:00.000Z',
+    isRead: true
+  }
+];
+
+export const initialSystemSettings: SystemSettings = {
+  appName: 'AH NYI',
+  allowRegistrations: true,
+  maintenanceMode: false,
+  adsEnabled: true,
+  creatorRewardsEnabled: true,
+  minPayoutMmk: 50000,
+  cpmRateMmk: 2500,
+  announcementMy: 'AH NYI လူမှုကွန်ရက် Gold Edition မှ ကြိုဆိုပါသည်။ မိမိတို့၏ အလှအပနှင့် အနုပညာများကို လွတ်လပ်စွာ မျှဝေခံစားနိုင်ပါပြီ။',
+  announcementEn: 'Welcome to AH NYI Gold Edition! Share your creativity, connect with friends, and unlock creator rewards.'
+};

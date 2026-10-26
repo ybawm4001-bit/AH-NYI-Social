@@ -1,0 +1,25 @@
+{
+  "short_name": "AH NYI",
+  "name": "AH NYI Social Network",
+  "description": "AH NYI Myanmar Social Networking Platform",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B0E14",
+  "theme_color": "#D4AF37",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/"
+}
